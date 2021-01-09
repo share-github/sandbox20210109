@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/tableLayout.css" />
+    <title>table layout</title>
+  </head>
+  <body>
+    <div id="app">
+      <input
+        type="text"
+        id="keyword"
+        v-model="keyword"
+        placeholder="検索ワードを入力"
+      />
+      <table>
+        <thead>
+          <tr>
+            <th class="user-contents">id</th>
+            <th class="user-contents">name</th>
+            <th class="url-contents">url1</th>
+            <th class="url-contents">url2</th>
+            <th class="url-contents">url3</th>
+            <th class="url-contents">url4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item,index) in filterUsers" ref="filterUsers">
+            <td>
+              <p>{{item.userId}}</p>
+            </td>
+            <td>
+              <p>{{item.userName}}</p>
+            </td>
+            <td class="url-contents">
+              <a v-bind:href="item.url1">url1</a>
+            </td>
+            <td class="url-contents">
+              <a v-bind:href="item.url2">url2</a>
+            </td>
+            <td class="url-contents">
+              <a v-bind:href="item.url3">url3</a>
+            </td>
+            <td class="url-contents">
+              <a v-bind:href="item.url4">url4</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/usersData.js"></script>
+    <script src="./js/tableLayout.js"></script>
+  </body>
+</html>
